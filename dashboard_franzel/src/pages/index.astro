@@ -1,0 +1,21 @@
+---
+import DashboardMiniaturas from '../components/DashboardMiniaturas.jsx';
+// No se necesita importar Tailwind aquí, Astro lo hace con la integración
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Miniaturas (Astro/React)</title>
+    <!-- Los estilos se inyectan automáticamente por el adaptador de Tailwind -->
+</head>
+<body>
+    <!-- 
+        Carga el componente React. 
+        client:load asegura que React se cargue en el navegador, 
+        dando interactividad al dashboard.
+    -->
+    <DashboardMiniaturas client:load /> 
+</body>
+</html>

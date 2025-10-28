@@ -1,16 +1,17 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import cloudflare from '@astrojs/cloudflare'; 
-import tailwind from "@astrojs/tailwind"; // Incluye Tailwind
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import cloudflare from "@astrojs/cloudflare";
 
+// https://astro.build/config
 export default defineConfig({
-  // Integraciones: React y Tailwind CSS
-  integrations: [react(), tailwind({ config: {} })],
-  
-  // Configuración de salida para el despliegue Edge/Serverless en Cloudflare
-  output: 'server', 
-  adapter: cloudflare(), 
-  
-  // Directorio de salida por defecto
-  outDir: './dist', 
+  // Adapters y integraciones necesarias para este proyecto
+  integrations: [react(), tailwind({
+    // Configuración de Tailwind CSS
+    applyBaseStyles: true
+  })],
+  // Adaptador para Cloudflare Pages
+  adapter: cloudflare(),
+  // Directorio de salida, por defecto 'dist'
+  outDir: './dist'
 });
